@@ -31,16 +31,16 @@ jobs:
       
     - name: Build with Gradle
       run: ./gradlew build
-         
-    - name: Upload S3
-      env:
+      
+    - name: credential config
+      uses: aws-actions/configure-aws-credentials@v1
+      with: 
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_IAM_ACCESS_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_IAM_ACCESS_KEY }}
-      run: |
-        aws s3 cp \
-          --region ap-northeast-2 \
-          --acl private \
-          ./build/libs/*.jar s3://hs-deploy-test-buc/
+        AWS-REGION: ap-northeast-2
+         
+    - name: Upload S3
+      run: aws s3 cp --region ap-northeast-2 --acl private ./build/libs/*.jar s3://hs-deploy-test-buc/
       
   
 
