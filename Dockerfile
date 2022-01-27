@@ -1,6 +1,6 @@
 FROM openjdk:11-jdk
 
-COPY ./deploy/*.jar application.jar
+COPY ./*.jar application.jar
 
 EXPOSE 8080
 
