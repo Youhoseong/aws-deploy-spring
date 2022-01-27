@@ -39,7 +39,8 @@ jobs:
       run: |
         aws s3 cp \
           --region ap-northeast-2 \
-          ./build/libs/*.jar s3://hs-deploy-test-buc
+          --acl private \
+          ./build/libs/*.jar s3://hs-deploy-test-buc/
       
   
 
