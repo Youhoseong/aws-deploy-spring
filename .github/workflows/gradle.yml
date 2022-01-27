@@ -40,7 +40,7 @@ jobs:
         aws-region: ap-northeast-2
          
     - name: Upload S3
-      run: aws s3 cp --region ap-northeast-2 --acl private ./build/libs/*.jar s3://hs-deploy-test-buc/
+      run: aws s3 cp --region ap-northeast-2 --acl private  ./build/libs/aws-cicd-spring-0.0.1-SNAPSHOT.jar s3://hs-deploy-test-buc/
       
   
 
