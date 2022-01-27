@@ -38,12 +38,9 @@ jobs:
     - name: copy jar
       run: cp ./build/libs/*.jar ./deploy
       
-    - name: copy docker file
-      run: cp Dockerfile ./deploy  
-      
 
     - name: Build the Docker image
-      run: docker build ./deploy --file Dockerfile --tag deploy-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag deploy-test:$(date +%s)
   
       
     
