@@ -19,7 +19,7 @@ sudo docker rmi -f ${docker_username}/${db_image_name}:${version}
 
 # new-build/re-build docker image
 echo "=> pull new image..."
-sudo docker pull ${docker_username}/${db_image_name}:${version} .
+sudo docker pull ${docker_username}/${db_image_name}:${version}
 
 # Run container
 echo "=> Run container..."
