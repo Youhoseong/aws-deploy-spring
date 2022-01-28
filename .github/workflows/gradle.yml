@@ -55,5 +55,12 @@ jobs:
       run: aws s3 cp --region ap-northeast-2 --acl private  ./deploy/deploy-test.zip s3://hs-deploy-test-buc/
       
   
-
+    - name: Code Deploy
+      run: |
+        aws deploy create-deployment \
+        --application-name test-codedeploy \
+        --deployment-config-name CodeDeployDefault.AllAtOnce \
+        --deployment-group-name deploy-test-group \
+        --s3-location bucket=hs-deploy-test-buc,bundleType=zip,key=deploy/deploy-test.zip
+        --region ap-northeast-2
         
