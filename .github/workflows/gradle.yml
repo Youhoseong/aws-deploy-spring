@@ -39,7 +39,7 @@ jobs:
       run : cp ./build/libs/*.jar ./deploy
      
     - name: Make zip
-      run: zip -r ./deploy-test.zip ./deploy
+      run: zip -r ./deploy/deploy-test.zip ./deploy
       
     - name : Check zip file
       run : ls
