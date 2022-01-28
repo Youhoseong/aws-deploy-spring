@@ -5,4 +5,8 @@ files:
     destination: /home/ec2-user/app/deploy
     overwrite: yes
 
-
+hooks:
+  ApplicationStart:
+    - location: scripts/docker.sh
+      timeout: 120
+      runas: ec2-user
