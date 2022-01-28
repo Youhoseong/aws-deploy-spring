@@ -32,11 +32,20 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew bootJar
       
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag deploy-test:latest
+
+    - name: tagging to docker image
+      run: docker tag deploy-test:latest youhoseong/deploy-test:latest
+
+    - name: push to docker hub
+      run: docker push youhoseong/deploy-test:latest
+      
     - name: Make Deploy Dir
       run: mkdir -p deploy
       
-    - name: Copy Jar
-      run: cp ./build/libs/*.jar ./deploy
+ #   - name: Copy Jar
+ #     run: cp ./build/libs/*.jar ./deploy
       
       
     - name: Copy appspec yml
