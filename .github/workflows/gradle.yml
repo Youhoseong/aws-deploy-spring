@@ -41,9 +41,17 @@ jobs:
       
     - name: Copy appspec yml
       run: cp appspec.yml ./deploy
+      
+    - name: make excutable
+      run : chmod +x ./scripts/*.sh
+
+    - name : Copy scripts
+      run : cp -r ./scripts ./deploy
      
     - name: Make zip
       run: zip -r ./deploy-test.zip ./deploy
+      
+      
       
     - name : Check zip file
       run : ls
