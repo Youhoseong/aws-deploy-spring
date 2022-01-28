@@ -35,11 +35,15 @@ jobs:
     - name: Make Deploy Dir
       run: mkdir -p deploy
       
-    - name : Copy Jar
-      run : cp ./build/libs/*.jar ./deploy
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./deploy
+      
+      
+    - name: Copy appspec yml
+      run: cp appspec.yml ./deploy
      
     - name: Make zip
-      run: zip -r ./deploy/deploy-test.zip ./deploy
+      run: zip -r ./deploy-test.zip ./deploy
       
     - name : Check zip file
       run : ls
@@ -52,7 +56,7 @@ jobs:
         aws-region: ap-northeast-2
          
     - name: Upload S3
-      run: aws s3 cp --region ap-northeast-2 --acl private  ./deploy/deploy-test.zip s3://hs-deploy-test-buc/
+      run: aws s3 cp --region ap-northeast-2 --acl private  ./deploy-test.zip s3://hs-deploy-test-buc/
       
   
     - name: Code Deploy
