@@ -12,6 +12,8 @@ echo "## Automation docker run ##"
 echo "=> docker running stop"
 sudo docker stop ${container_name}
 
+echo "=> docker container rm"
+sudo docker rm -f ${container_name}
 
 # remove image
 echo "=> Remove previous image..."
