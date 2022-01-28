@@ -2,7 +2,7 @@
 - ec2에 spring boot application 배포자동화를 해봅니다.
 
 - Github Action을 통한 Docker Image Making & Docker Hub Push (Main Branch Target)
-- Codedeploy Shell Script 실행을 통한 Docker Image Pull & EC2에 Docker Container Running
+- Codedeploy Shell Script 실행을 통한 Docker Image Pull & EC2에 Docker Container 실행
 
 # 아키텍쳐
 
