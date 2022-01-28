@@ -15,12 +15,12 @@ sudo docker stop ${container_name}
 
 # remove image
 echo "=> Remove previous image..."
-sudo docker rmi -f ${docker_username}/${db_image_name}:${version}
+sudo docker rmi -f ${docker_username}/${image_name}:${version}
 
 # new-build/re-build docker image
 echo "=> pull new image..."
-sudo docker pull ${docker_username}/${db_image_name}:${version}
+sudo docker pull ${docker_username}/${image_name}:${version}
 
 # Run container
 echo "=> Run container..."
-sudo docker run -d -p ${port}:${port} --name ${test-api} ${docker_username}/${db_image_name}:${version}
+sudo docker run -d -p ${port}:${port} --name ${container_name} ${docker_username}/${image_name}:${version}
